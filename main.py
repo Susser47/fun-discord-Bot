@@ -21,4 +21,4 @@ async def flip(ctx):
     CoinResult = flipACoin()
     await ctx.send(f"the coin landed on...\n**{CoinResult}**")
 
-bot.run("MTIwMzAyMDc3NjA3NzUzMzI1NA.G6NY-0.IbwY-2rjOBCYyk_tqNdhqASwDflqR8rXjjfnUU")
+bot.run("YOUR TOKEN")
