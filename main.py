@@ -11,38 +11,42 @@ bot = commands.AutoShardedBot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f"We logged in as \"{bot.user}\"")
+    await bot.wait_until_ready()
+    await bot.tree.sync()
+    print(f"logged in as \"{bot.user}\"")
+    print("synced commands")
 
 
-@bot.command(name = "password", description = "generates a password")
-async def password(ctx, length = 8):
-    password = GeneratePassword(int(length))
-    await ctx.send(f"your password:\n**{password}**")
+@bot.tree.command(name = "password", description = "generates a password")
+async def password(interaction: discord.Interaction, length: int = 8):
+    password = GeneratePassword(length)
+    await interaction.response.send_message(f"your password:\n**{password}**\nTHIS MESSAGE WILL BE DELETED IN 30 SECONDS AFTER BEING SENT", ephemeral=False, delete_after=30)
+    print("password generated")
 
 
-@bot.command()
-async def flip(ctx):
+@bot.tree.command(name="flip", description="flips a coin")
+async def flip(interaction: discord.Interaction, private: bool = False):
     coinResult = FlipACoin()
-    await ctx.send(f"the coin landed on...\n**{coinResult}**")
+    if not private:
+        await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**")
+    else:
+        await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**", ephemeral=True, delete_after=30)
 
 
-@bot.command()
-async def rps(ctx, choice):
-    await ctx.send("rock")
-    time.sleep(0.4)
-    await ctx.send("paper")
-    time.sleep(0.4)
-    await ctx.send("scissors")
-    time.sleep(0.4)
-    await ctx.send("shoot!!")
-    await ctx.send("------------")
-
+@bot.tree.command(name="rps", description="play a game of rock paper scissors with the bot")
+async def rps(interaction: discord.Interaction, choice: str, private: bool = False):
     pcChoices = ["rock", "paper", "scissors"]
 
     pcChoice = random.choice(pcChoices)
+
     result = RockPaperScissorsCalculate(choice, pcChoice)
-    
-    await ctx.send(result)
+
+    if not private:
+        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}")
+    else:
+        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", ephemeral=True, delete_after=30)
+
+    print("played a game of rock paper scissors")
 
 
 bot.run("YOUR TOKEN")
