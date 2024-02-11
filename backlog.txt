@@ -1,0 +1,3 @@
+things to add to the bot
+1. music bot
+2. text emojis
