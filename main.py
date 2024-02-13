@@ -3,6 +3,7 @@ from discord.ext import commands
 import random
 import time
 from utils import *
+import BotToken
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -54,4 +55,4 @@ async def GetInfo(interaction: discord.Interaction):
     print("info sent to a user")
 
 
-bot.run("YOUR TOKEN")
+bot.run(BotToken.token)
