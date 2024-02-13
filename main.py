@@ -48,5 +48,10 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Fal
 
     print("played a game of rock paper scissors")
 
+@bot.tree.command(name="botinfo", description="get some info about what the bot does")
+async def GetInfo(interaction: discord.Interaction):
+    await interaction.response.send_message(botInfo)
+    print("info set to a user")
+
 
 bot.run("YOUR TOKEN")
