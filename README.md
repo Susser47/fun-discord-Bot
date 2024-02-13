@@ -6,4 +6,4 @@ if you find any issues make an issue
 1. /password: generates a password and sends it in the current channel  
 2. /flip: this flips a coin and sends the result in the current channel  
 3. /rps: this makes you play a game of rock paper scissors with the bot
-4. /info: sends info about the bot
+4. /botinfo: sends info about the bot
