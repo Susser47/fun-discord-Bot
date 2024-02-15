@@ -12,6 +12,15 @@ bot = commands.AutoShardedBot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
+    print("""
+    _           _             _           _   
+   (_)_   _ ___| |_    __ _  | |__   ___ | |_ 
+   | | | | / __| __|  / _` | | '_ \ / _ \| __|
+   | | |_| \__ \ |_  | (_| | | |_) | (_) | |_ 
+  _/ |\__,_|___/\__|  \__,_| |_.__/ \___/ \__|
+ |__/     
+          """)
+    
     await bot.wait_until_ready()
     print(f"logged in as \"{bot.user}\"")
     await bot.tree.sync()
