@@ -35,7 +35,7 @@ async def flip(interaction: discord.Interaction, private: bool = False):
 
 
 @bot.tree.command(name="rps", description="play a game of rock paper scissors with the bot")
-async def rps(interaction: discord.Interaction, choice: str, private: bool = False):
+async def rps(interaction: discord.Interaction, choice: str, private: bool = True):
     pcChoices = ["rock", "paper", "scissors"]
 
     pcChoice = random.choice(pcChoices)
@@ -43,7 +43,7 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Fal
     result = RockPaperScissorsCalculate(choice, pcChoice)
 
     if not private:
-        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}")
+        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", delete_after=30)
     else:
         await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", ephemeral=True, delete_after=30)
 
