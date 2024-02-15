@@ -49,10 +49,16 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Fal
 
     print("played a game of rock paper scissors")
 
-@bot.tree.command(name="botinfo", description="get some info about what the bot does")
+@bot.tree.command(name="help", description="get some info about the commands")
 async def GetInfo(interaction: discord.Interaction):
     await interaction.response.send_message(botInfo, ephemeral=True, delete_after=30)
     print("info sent to a user")
+
+
+@bot.tree.command(name="source", description="get the source code of the bot")
+async def GetSource(interaction: discord.Interaction):
+    await interaction.response.send_message("github repository for the source code:\nhttps://github.com/Susser47/Discord-Bot", ephemeral=True, delete_after=30)
+    print("github repo link send to user")
 
 
 bot.run(BotToken.token)
