@@ -28,10 +28,12 @@ async def password(interaction: discord.Interaction, length: int = 8):
 @bot.tree.command(name="flip", description="flips a coin")
 async def flip(interaction: discord.Interaction, private: bool = False):
     coinResult = FlipACoin()
-    if not private:
-        await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**")
-    else:
+    if private:
         await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**", ephemeral=True, delete_after=30)
+        print("flipped a private coin")
+    else:
+        await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**")
+        print("flipped a public coin")
 
 
 @bot.tree.command(name="rps", description="play a game of rock paper scissors with the bot")
@@ -42,12 +44,13 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Tru
 
     result = RockPaperScissorsCalculate(choice, pcChoice)
 
-    if not private:
-        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", delete_after=30)
-    else:
+    if private:
         await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", ephemeral=True, delete_after=30)
+        print("played a private game of rock paper scissors")
+    else:
+        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}")
+        print("played a public game of rock paper scissors")
 
-    print("played a game of rock paper scissors")
 
 @bot.tree.command(name="roll", description="roll a dice with said faces")
 async def Roll(interaction: discord.Interaction, faces: int = 6, private: bool = True):
