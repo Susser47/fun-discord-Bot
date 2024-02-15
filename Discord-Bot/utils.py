@@ -1,6 +1,6 @@
 import random
 
-botInfo = "this bot is just an open source fun bot with some useful features like password generation and other, you can see the code and README.txt file at https://github.com/Susser47/Discord-Bot.\nin the README file you can see all the commands of the bot and what they do"
+botInfo = "this bot is just an open source fun bot with some useful features like password generation and other, you can see the code and README.md file at https://github.com/Susser47/Discord-Bot.\nin the README file you can see all the commands of the bot and what they do"
 
 def GeneratePassword(Length):
     characters = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-_=+[{"
