@@ -49,6 +49,16 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Tru
 
     print("played a game of rock paper scissors")
 
+@bot.tree.command(name="roll", description="roll a dice with said faces")
+async def Roll(interaction: discord.Interaction, faces: int = 6, private: bool = True):
+    if private:
+        await interaction.response.send_message(f"the dice landed on a **{RollADice(faces)}**", ephemeral=True, delete_after=10)
+        print("rolled a private dice")
+    else:
+        await interaction.response.send_message(f"the dice landed on a {RollADice(faces)}")
+        print("rolled a public dice")
+
+
 @bot.tree.command(name="help", description="get some info about the commands")
 async def GetInfo(interaction: discord.Interaction):
     await interaction.response.send_message(botInfo, ephemeral=True, delete_after=30)

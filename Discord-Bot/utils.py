@@ -37,3 +37,7 @@ def RockPaperScissorsCalculate(userChoice, pcChoice):
         return "**You win!!!!**\nPC lost!"
     else:
         return "You lost!!\n**PC wins!!!**"
+    
+
+def RollADice(faces: int):
+    return random.randint(1, faces)
