@@ -21,7 +21,7 @@ async def on_ready():
 @bot.tree.command(name = "password", description = "generates a password")
 async def password(interaction: discord.Interaction, length: int = 8):
     password = GeneratePassword(length)
-    await interaction.response.send_message(f"your password:\n**{password}**\nTHIS MESSAGE WILL BE DELETED IN 30 SECONDS AFTER BEING SENT", ephemeral=True, delete_after=30)
+    await interaction.response.send_message(f"your password:\n**{password}**\n\n||THIS MESSAGE WILL BE DELETED IN 30 SECONDS AFTER BEING SENT||", ephemeral=True, delete_after=30)
     print("password generated")
 
 
