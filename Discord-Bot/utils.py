@@ -8,6 +8,7 @@ commands:
 /flip: flips a coin
 /rps: lets you play a game of rock paper scissors with the bot
 /source: get the github repository link for the source code of this bot
+/roll: roll a dice with said faces
 """
 
 def GeneratePassword(Length):
