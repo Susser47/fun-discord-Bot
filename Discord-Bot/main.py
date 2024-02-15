@@ -13,8 +13,8 @@ bot = commands.AutoShardedBot(command_prefix='/', intents=intents)
 @bot.event
 async def on_ready():
     await bot.wait_until_ready()
-    await bot.tree.sync()
     print(f"logged in as \"{bot.user}\"")
+    await bot.tree.sync()
     print("synced commands")
 
 
