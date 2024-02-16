@@ -1,6 +1,6 @@
 # Discord bot
 
-# ATTENTION: the owner of this repo does not take reponsability for the use you do with this code
+# DISCALIMER: the owner of this repo does not take reponsability for the use you do with this code
 
 ## what is this bot  
 this bot isnt anything special but just an open source bot you can use if you need  
