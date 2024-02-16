@@ -111,4 +111,14 @@ async def GetSource(interaction: discord.Interaction):
     print("github repo link send to user")
 
 
+@bot.tree.command(name="reverse", description="reverses a given word or phrase")
+async def WordReverse(interaction: discord.Interaction, word: str, private: bool = True):
+    if private:
+        await interaction.response.send_message(f"your word: {word}\nreversed word: {ReverseWord(word)}", ephemeral=True, delete_after=30)
+        print("reversed a word privately")
+    else:
+        await interaction.response.send_message(f"your word: {word}\nreversed word: {ReverseWord(word)}")
+        print("reversed a word publicly")
+
+
 bot.run(BotToken.token)

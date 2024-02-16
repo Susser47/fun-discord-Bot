@@ -11,6 +11,7 @@ this bot is just an open source fun bot with some useful and features like passw
 /roll: roll a dice with said faces
 /8ball: shake the magic 8 ball and get a yes/no response to one of your questions
 /numberguess: try to guess the number the bot will output
+/reverse: reverses a given word or phrase
 """
 
 def GeneratePassword(Length):
@@ -79,3 +80,7 @@ choosen number: {guess}
 
 **you lost**
                """
+    
+
+def ReverseWord(word: str):
+    return word[::-1]

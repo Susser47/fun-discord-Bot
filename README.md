@@ -24,6 +24,7 @@ if you find any issues make an issue
 
 8. /numberguess: play a game where you have to guess the number that the bot choose, you can even set the max number to make it easier or harder
 
+9. /reverse: reverses the order of a given word or phrase
 
 # how can developers setup this bot  
 develpers, to set up this bot you first clone the repository doing  
