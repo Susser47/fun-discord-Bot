@@ -10,6 +10,7 @@ this bot is just an open source fun bot with some useful and features like passw
 /source: get the github repository link for the source code of this bot
 /roll: roll a dice with said faces
 /8ball: shake the magic 8 ball and get a yes/no response to one of your questions
+/numberguess: try to guess the number the bot will output
 """
 
 def GeneratePassword(Length):
@@ -59,3 +60,22 @@ question: {question}
 
 response: {random.choice(choices)}
 """
+
+
+def GuessTheNumber(guess: int, max: int):
+    botChoice = random.randint(0, max)
+
+    if guess == botChoice:
+        return f"""
+bot number: {botChoice}
+choosen number: {guess}
+
+**you won!!!**
+               """
+    else:
+        return f"""
+bot number: {botChoice}
+choosen number: {guess}
+
+**you lost**
+               """

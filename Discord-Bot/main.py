@@ -70,7 +70,7 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Tru
 @bot.tree.command(name="roll", description="roll a dice with said faces")
 async def Roll(interaction: discord.Interaction, faces: int = 6, private: bool = True):
     if private:
-        await interaction.response.send_message(f"the dice landed on a **{RollADice(faces)}**", ephemeral=True, delete_after=10)
+        await interaction.response.send_message(f"the dice landed on a **{RollADice(faces)}**", ephemeral=True, delete_after=30)
         print("rolled a private dice")
     else:
         await interaction.response.send_message(f"the dice landed on a {RollADice(faces)}")
@@ -85,6 +85,16 @@ async def EightBall(interaction: discord.Interaction,question: str, private: boo
     else:
         await interaction.response.send_message(ShakeEightBall(question))
         print("shaked the eight ball privately")
+
+
+@bot.tree.command(name="numberguess", description="play a game where you have to guess a number the bot will output")
+async def NumberGuess(interaction: discord.Interaction, guess: int, max: int = 10, private: bool = True):
+    if private:
+        await interaction.response.send_message(GuessTheNumber(guess, max), ephemeral=True, delete_after=30)
+        print("played a private game of guess the number")
+    else:
+        await interaction.response.send_message(GuessTheNumber(guess, max))
+        print("played a public game of guess the number")
 
 
 

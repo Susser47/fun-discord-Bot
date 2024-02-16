@@ -1,16 +1,30 @@
 # Discord bot
+
 # ATTENTION: the owner of this repo does not take reponsability for the use you do with this code
+
 ## what is this bot  
 this bot isnt anything special but just an open source bot you can use if you need  
 if you find any issues make an issue
+
+
 ## bot functions  
 1. /password: generates a password and sends it in the current channel  
+
 2. /flip: this flips a coin and sends the result in the current channel  
+
 3. /rps: this makes you play a game of rock paper scissors with the bot
+
 4. /help: sends info about the bot  
+
 5. /source: get the source code for the bot
+
 6. /roll: roll a dice with a said amount of faces decided by the user (the default is 6)  
-7. /8ball: this rolls the magic 8 ball and sends the result in the current channel
+
+7. /8ball: this rolls the magic 8 ball and sends the result in the current channel  
+
+8. /numberguess: play a game where you have to guess the number that the bot choose, you can even set the max number to make it easier or harder
+
+
 # how can developers setup this bot  
 develpers, to set up this bot you first clone the repository doing  
 > git clone https://github.com/Susser47/Discord-Bot/  
