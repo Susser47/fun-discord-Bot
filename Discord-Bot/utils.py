@@ -1,4 +1,5 @@
 import random
+import requests
 
 botInfo = """
 this bot is just an open source fun bot with some useful and features like password generation and other. 
@@ -12,6 +13,9 @@ this bot is just an open source fun bot with some useful and features like passw
 /8ball: shake the magic 8 ball and get a yes/no response to one of your questions
 /numberguess: try to guess the number the bot will output
 /reverse: reverses a given word or phrase
+/duck: get a random image of a duck
+/dog: get a random image of a dog
+/fox: get a random image of a fox
 """
 
 def GeneratePassword(Length):
@@ -84,3 +88,27 @@ choosen number: {guess}
 
 def ReverseWord(word: str):
     return word[::-1]
+
+
+def GetRandomDuckImageUrl():
+    apiUrl = "https://random-d.uk/api/random"
+    result = requests.get(apiUrl)
+    data = result.json()        # questo converte result (un json) in una cosa che python "puo leggere"
+    
+    return data["url"]
+
+
+def GetRandomDogImageUrl():
+    apiUrl = "https://random.dog/woof.json"
+    result = requests.get(apiUrl)
+    data = result.json()        # questo converte result (un json) in una cosa che python "puo leggere"
+    
+    return data["url"]
+
+
+def GetRandomFoxImageUrl():
+    apiUrl = "https://randomfox.ca/floof/"
+    result = requests.get(apiUrl)
+    data = result.json()        # questo converte result (un json) in una cosa che python "puo leggere"
+    
+    return data["link"]

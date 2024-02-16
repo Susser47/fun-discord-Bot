@@ -26,6 +26,12 @@ if you find any issues make an issue
 
 9. /reverse: reverses the order of a given word or phrase
 
+10. /duck: get a random image of a duck  
+
+11. /dog: get a random image of a dog  
+
+12. /fox: get a random image of a fox  
+
 # how can developers setup this bot  
 develpers, to set up this bot you first clone the repository doing  
 > git clone https://github.com/Susser47/Discord-Bot/  

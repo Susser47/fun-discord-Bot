@@ -5,6 +5,7 @@ import time
 from utils import *
 import BotToken
 import os
+import requests
 
 # comment this if you don't want the screen to be cleared when the bot starts
 os.system("clear")
@@ -99,6 +100,20 @@ async def NumberGuess(interaction: discord.Interaction, guess: int, max: int = 1
         await interaction.response.send_message(GuessTheNumber(guess, max))
         print("played a public game of guess the number")
 
+
+@bot.tree.command(name="duck", description="get a random image of a duck")
+async def GetRandomDuckImage(interaction: discord.Interaction):
+    await interaction.response.send_message(GetRandomDuckImageUrl())
+
+
+@bot.tree.command(name="dog", description="get a random image of a dog")
+async def GetRandomDuckImage(interaction: discord.Interaction):
+    await interaction.response.send_message(GetRandomDogImageUrl())
+
+
+@bot.tree.command(name="fox", description="get a random image of a fox")
+async def GetRandomDuckImage(interaction: discord.Interaction):
+    await interaction.response.send_message(GetRandomFoxImageUrl())
 
 
 # info commands
