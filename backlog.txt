@@ -1,2 +1,2 @@
 things to add to the bot
-1. text emojis
+1. text emojis, some are: happy, sad, cat, dog, hi, ecc.
