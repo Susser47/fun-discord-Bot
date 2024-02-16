@@ -4,6 +4,11 @@ import random
 import time
 from utils import *
 import BotToken
+import os
+
+# comment this if you don't want the screen to be cleared when the bot starts
+os.system("clear")
+os.system("CLS")
 
 intents = discord.Intents.default()
 intents.message_content = True
