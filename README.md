@@ -9,7 +9,8 @@ if you find any issues make an issue
 3. /rps: this makes you play a game of rock paper scissors with the bot
 4. /help: sends info about the bot  
 5. /source: get the source code for the bot
-6. /roll: roll a dice with a said amount of faces decided by the user (the default is 6)
+6. /roll: roll a dice with a said amount of faces decided by the user (the default is 6)  
+7. /8ball: this rolls the magic 8 ball and sends the result in the current channel
 # how can developers setup this bot  
 develpers, to set up this bot you first clone the repository doing  
 > git clone https://github.com/Susser47/Discord-Bot/  

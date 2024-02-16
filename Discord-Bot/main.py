@@ -27,6 +27,7 @@ async def on_ready():
     print("synced commands")
 
 
+# fun commands
 @bot.tree.command(name = "password", description = "generates a password")
 async def password(interaction: discord.Interaction, length: int = 8):
     password = GeneratePassword(length)
@@ -71,6 +72,18 @@ async def Roll(interaction: discord.Interaction, faces: int = 6, private: bool =
         print("rolled a public dice")
 
 
+@bot.tree.command(name="8ball", description="shake the magic 8 ball")
+async def EightBall(interaction: discord.Interaction,question: str, private: bool = True):
+    if private:
+        await interaction.response.send_message(ShakeEightBall(question), ephemeral=True, delete_after=30)
+        print("shaked the eight ball privately")
+    else:
+        await interaction.response.send_message(ShakeEightBall(question))
+        print("shaked the eight ball privately")
+
+
+
+# info commands
 @bot.tree.command(name="help", description="get some info about the commands")
 async def GetInfo(interaction: discord.Interaction):
     await interaction.response.send_message(botInfo, ephemeral=True, delete_after=30)
