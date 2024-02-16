@@ -41,30 +41,33 @@ async def password(interaction: discord.Interaction, length: int = 8):
 
 
 @bot.tree.command(name="flip", description="flips a coin")
-async def flip(interaction: discord.Interaction, private: bool = False):
-    coinResult = FlipACoin()
+async def flip(interaction: discord.Interaction, private: bool = True):
     if private:
-        await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**", ephemeral=True, delete_after=30)
+        await interaction.response.send_message(f"the coin landed on...\n**{FlipACoin()}**", ephemeral=True, delete_after=30)
         print("flipped a private coin")
     else:
-        await interaction.response.send_message(f"the coin landed on...\n**{coinResult}**")
+        await interaction.response.send_message(f"the coin landed on...\n**{FlipACoin()}**")
         print("flipped a public coin")
 
 
 @bot.tree.command(name="rps", description="play a game of rock paper scissors with the bot")
 async def rps(interaction: discord.Interaction, choice: str, private: bool = True):
-    pcChoices = ["rock", "paper", "scissors"]
-
+    pcChoices = ["rock",
+                "paper",
+                 "scissors"]
     pcChoice = random.choice(pcChoices)
-
     result = RockPaperScissorsCalculate(choice, pcChoice)
 
-    if private:
-        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", ephemeral=True, delete_after=30)
-        print("played a private game of rock paper scissors")
+    if choice != "rock" or choice != "paper" or choice != "scissors":
+        await interaction.response.send_message(f"the response must only be rock, paper or scissors")
+        print("user command not accepted, sending error")
     else:
-        await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}")
-        print("played a public game of rock paper scissors")
+        if private:
+            await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}", ephemeral=True, delete_after=30)
+            print("played a private game of rock paper scissors")
+        else:
+            await interaction.response.send_message(f"rock\npaper\nscissors\nshoot!!\n----------------\npc choose: {pcChoice}\nyou choose: {choice}\n----------------\n{result}")
+            print("played a public game of rock paper scissors")
 
 
 @bot.tree.command(name="roll", description="roll a dice with said faces")

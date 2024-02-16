@@ -1,3 +1,2 @@
 things to add to the bot
 1. text emojis
-2. add error handling
