@@ -137,6 +137,16 @@ async def RandomDadJoke(interaction: discord.Interaction, private: bool = False)
         print("made a public dad joke")
 
 
+@bot.tree.command(name="reverse", description="reverses a given word or phrase")
+async def WordReverse(interaction: discord.Interaction, word: str, private: bool = True):
+    if private:
+        await interaction.response.send_message(f"your word: {word}\nreversed word: {ReverseWord(word)}", ephemeral=True, delete_after=30)
+        print("reversed a word privately")
+    else:
+        await interaction.response.send_message(f"your word: {word}\nreversed word: {ReverseWord(word)}")
+        print("reversed a word publicly")
+
+
 
 # info commands
 @bot.tree.command(name="help", description="get some info about the commands")
@@ -149,16 +159,5 @@ async def GetInfo(interaction: discord.Interaction):
 async def GetSource(interaction: discord.Interaction):
     await interaction.response.send_message("github repository for the source code:\nhttps://github.com/Susser47/Discord-Bot", ephemeral=True, delete_after=30)
     print("github repo link send to user")
-
-
-@bot.tree.command(name="reverse", description="reverses a given word or phrase")
-async def WordReverse(interaction: discord.Interaction, word: str, private: bool = True):
-    if private:
-        await interaction.response.send_message(f"your word: {word}\nreversed word: {ReverseWord(word)}", ephemeral=True, delete_after=30)
-        print("reversed a word privately")
-    else:
-        await interaction.response.send_message(f"your word: {word}\nreversed word: {ReverseWord(word)}")
-        print("reversed a word publicly")
-
 
 bot.run(BotToken.token)
