@@ -104,16 +104,19 @@ async def NumberGuess(interaction: discord.Interaction, guess: int, max: int = 1
 @bot.tree.command(name="duck", description="get a random image of a duck")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     await interaction.response.send_message(GetRandomDuckImageUrl())
+    print("send a random image of a duck")
 
 
 @bot.tree.command(name="dog", description="get a random image of a dog")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     await interaction.response.send_message(GetRandomDogImageUrl())
+    print("sent a random image of a dog")
 
 
 @bot.tree.command(name="fox", description="get a random image of a fox")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     await interaction.response.send_message(GetRandomFoxImageUrl())
+    print("send a random image of a fox")
 
 
 # info commands
