@@ -32,7 +32,9 @@ if you find any issues make an issue
 
 12. /fox: get a random image of a fox  
 
-13. /cat: get a random image of a cat
+13. /cat: get a random image of a cat  
+
+14. /dadjoke: sends a random dad joke that can be private or not
 
 # how can developers setup this bot  
 develpers, to set up this bot you first clone the repository doing  
@@ -43,4 +45,7 @@ command or by just copying the code off of github if you dont have git installed
 once you have the exact files you will need to create the BotToken.py file and inside should be this text:  
 > token = "your bot token"  
 
-where "your bot token" is your actual bot token, then after this you can start the bot and you are up and running
+where "your bot token" is your actual bot token, then after this you can start the bot and you are up and running  
+
+## note to developers  
+if in the json file the jokes are repeted it's because they were written by chat gpt

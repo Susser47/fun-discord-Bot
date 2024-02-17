@@ -1,5 +1,6 @@
 import random
 import requests
+import json
 
 botInfo = """
 this bot is just an open source fun bot with some useful and features like password generation and other. 
@@ -17,6 +18,7 @@ this bot is just an open source fun bot with some useful and features like passw
 /dog: get a random image of a dog
 /fox: get a random image of a fox
 /cat: get a random image of a cat
+/dadjoke: sends a random dad joke
 """
 
 def GeneratePassword(Length):
@@ -121,4 +123,11 @@ def GetRandomCatImageUrl():
     data = result.json()
 
     return data[0]["url"]
-    
+
+
+def GetRandomDadJoke():
+    with open("dad jokes.json", "r") as f:
+        data = json.load(f)
+        dadJokes = data["jokes"]
+        
+        return random.choice(dadJokes)

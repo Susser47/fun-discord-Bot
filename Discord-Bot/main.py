@@ -126,6 +126,17 @@ async def GetCatImage(interaction: discord.Interaction):
     print("sent a random image of a cat")
 
 
+@bot.tree.command(name="dadjoke", description="get a random dad joke")
+async def RandomDadJoke(interaction: discord.Interaction, private: bool = False):
+    joke = GetRandomDadJoke()
+    if private:
+        await interaction.response.send_message(joke, ephemeral=True)
+        print("made a private dad joke")
+    else:
+        await interaction.response.send_message(joke)
+        print("made a public dad joke")
+
+
 
 # info commands
 @bot.tree.command(name="help", description="get some info about the commands")
