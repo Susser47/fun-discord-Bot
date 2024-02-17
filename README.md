@@ -32,6 +32,8 @@ if you find any issues make an issue
 
 12. /fox: get a random image of a fox  
 
+13. /cat: get a random image of a cat
+
 # how can developers setup this bot  
 develpers, to set up this bot you first clone the repository doing  
 > git clone https://github.com/Susser47/Discord-Bot/  

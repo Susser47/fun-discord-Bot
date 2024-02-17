@@ -101,6 +101,7 @@ async def NumberGuess(interaction: discord.Interaction, guess: int, max: int = 1
         print("played a public game of guess the number")
 
 
+# generate random images of animals with an api
 @bot.tree.command(name="duck", description="get a random image of a duck")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     await interaction.response.send_message(GetRandomDuckImageUrl())
@@ -116,7 +117,14 @@ async def GetRandomDuckImage(interaction: discord.Interaction):
 @bot.tree.command(name="fox", description="get a random image of a fox")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     await interaction.response.send_message(GetRandomFoxImageUrl())
-    print("send a random image of a fox")
+    print("sent a random image of a fox")
+
+
+@bot.tree.command(name="cat", description="get a random image of a cat")
+async def GetCatImage(interaction: discord.Interaction):
+    await interaction.response.send_message(GetRandomCatImageUrl())
+    print("sent a random image of a cat")
+
 
 
 # info commands

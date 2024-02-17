@@ -16,6 +16,7 @@ this bot is just an open source fun bot with some useful and features like passw
 /duck: get a random image of a duck
 /dog: get a random image of a dog
 /fox: get a random image of a fox
+/cat: get a random image of a cat
 """
 
 def GeneratePassword(Length):
@@ -112,3 +113,12 @@ def GetRandomFoxImageUrl():
     data = result.json()        # questo converte result (un json) in una cosa che python "puo leggere"
     
     return data["link"]
+
+
+def GetRandomCatImageUrl():
+    apiUrl = "https://api.thecatapi.com/v1/images/search"
+    result = requests.get(apiUrl)
+    data = result.json()
+
+    return data[0]["url"]
+    
