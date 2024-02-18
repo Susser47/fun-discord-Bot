@@ -42,10 +42,18 @@ def FlipACoin():
     
     
 def RockPaperScissorsCalculate(userChoice, pcChoice):
+    if userChoice == "r": userChoice = "rock"
+    elif userChoice == "p": userChoice = "paper"
+    elif userChoice == "s":userChoice = "scissors"
+
     if userChoice.lower() == pcChoice:
         return "It's a tie!!"
-    elif userChoice.lower() == "rock" and pcChoice == "scissors" or userChoice.lower() == "scissors" and pcChoice == "paper" or userChoice.lower() == "paper" and pcChoice == "rock":
+    elif (userChoice.lower() == "rock" and pcChoice == "scissors") or \
+         (userChoice.lower() == "scissors" and pcChoice == "paper") or \
+         (userChoice.lower() == "paper" and pcChoice == "rock"):
+        
         return "**You win!!!!**\nPC lost!"
+    
     else:
         return "You lost!!\n**PC wins!!!**"
     
