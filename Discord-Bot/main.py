@@ -183,6 +183,13 @@ async def GetInfo(interaction: discord.Interaction):
 async def GetSource(interaction: discord.Interaction):
     userExecutor = interaction.user.name
     await interaction.response.send_message("github repository for the source code:\nhttps://github.com/Susser47/Discord-Bot", ephemeral=True, delete_after=30)
-    print(f"github repo link send {userExecutor}")
+    print(f"github repo link sent {userExecutor}")
+
+
+@bot.tree.command(name="ping", description="get the bot latency")
+async def GetPing(interaction: discord.Interaction):
+    userExecutor = interaction.user.name
+    await interaction.response.send_message(f"{round(bot.latency * 1000)}ms", ephemeral=True, delete_after=30)
+    print(f"bot latency sent to {userExecutor} ({round(bot.latency * 1000)}ms)")
 
 bot.run(BotToken.token)
