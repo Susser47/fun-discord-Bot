@@ -3,7 +3,7 @@
 # DISCALIMER: the owner of this repo does not take reponsability for the use you do with this code
 
 ## what is this bot  
-this is mainly a fun bot meaning the bot has close to 0 staff commands (if not 0)  
+as the name says this is mainly a fun bot meaning the bot has close to 0 staff commands (if not 0)  
 this bot isnt anything special but just an open source bot you can use if you need  
 if you find any issues make an issue
 
