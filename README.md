@@ -1,4 +1,4 @@
-# Discord bot
+# fun discord bot
 
 # DISCALIMER: the owner of this repo does not take reponsability for the use you do with this code
 
