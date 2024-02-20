@@ -3,3 +3,4 @@ venv/
 .git
 BotToken.py
 Discord-Bot/venv
+.vscode/
