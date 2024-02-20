@@ -6,10 +6,13 @@ from utils import *
 import BotToken
 import os
 import requests
+from BotInfoClass import BotInfo as BotInfoClass
 
 # comment this if you don't want the screen to be cleared when the bot starts
 os.system("clear")
 os.system("CLS")
+
+BotInfo = BotInfoClass        # creating an istance of the BotInfoClass class
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -26,6 +29,7 @@ async def on_ready():
   _/ |\__,_|___/\__|  \__,_| |_.__/ \___/ \__|
  |__/     
           """)
+    print(BotInfo.info)
     
     await bot.wait_until_ready()
     print(f"logged in as \"{bot.user}\"")
@@ -178,14 +182,14 @@ async def WordReverse(interaction: discord.Interaction, word: str, private: bool
 @bot.tree.command(name="help", description="get some info about the commands")
 async def GetInfo(interaction: discord.Interaction):
     userExecutor = interaction.user.name
-    await interaction.response.send_message(botInfo, ephemeral=True, delete_after=30)
+    await interaction.response.send_message(BotInfo.info, ephemeral=True, delete_after=30)
     print(f"info sent to {userExecutor}")
 
 
 @bot.tree.command(name="source", description="get the source code of the bot")
 async def GetSource(interaction: discord.Interaction):
     userExecutor = interaction.user.name
-    await interaction.response.send_message("github repository for the source code:\nhttps://github.com/Susser47/Discord-Bot", ephemeral=True, delete_after=30)
+    await interaction.response.send_message(BotInfo.info, ephemeral=True, delete_after=30)
     print(f"github repo link sent {userExecutor}")
 
 
