@@ -35,10 +35,15 @@ if you find any issues make an issue
 
 13. /cat: get a random image of a cat  
 
-14. /dadjoke: sends a random dad joke that can be private or not
+14. /dadjoke: sends a random dad joke that can be private or not  
 
-# how can developers setup this bot  
-develpers, to set up this bot you first clone the repository doing  
+15. /ping: get the bot latecy  
+
+16. /serverinfo: get info about the server
+
+# how to setup this bot  
+to set up this bot you first clone the repository doing  
+
 > git clone https://github.com/Susser47/Discord-Bot/  
 
 command or by just copying the code off of github if you dont have git installed  
@@ -46,7 +51,9 @@ command or by just copying the code off of github if you dont have git installed
 once you have the exact files you will need to create the BotToken.py file and inside should be this text:  
 > token = "your bot token"  
 
-where "your bot token" is your actual bot token, then after this you can start the bot and you are up and running  
+where "your bot token" is your actual bot token, then after this you can start the bot  
 
-## note to developers  
+then you will have to change the server description in serverinfo.json so the serevrinfo command will work properly
+
+## note  
 if in the json file the jokes are repeted it's because they were written by chat gpt

@@ -7,6 +7,7 @@ import BotToken
 import os
 import requests
 from BotInfoClass import BotInfo as BotInfoClass
+import json
 
 # comment this if you don't want the screen to be cleared when the bot starts
 os.system("clear")
@@ -196,5 +197,21 @@ async def GetPing(interaction: discord.Interaction):
     userExecutor = interaction.user.name
     await interaction.response.send_message(f"{round(bot.latency * 1000)}ms", ephemeral=True, delete_after=30)
     print(f"bot latency sent to {userExecutor} ({round(bot.latency * 1000)}ms)")
+
+
+@bot.tree.command(name="serverinfo", description="get info about this server")
+async def GetInfo(interaction: discord.Interaction):
+    userExecutor = interaction.user.name
+
+    with open("serverinfo.json", "r") as f:
+        data = json.load(f)
+        if data["serverDescription"] != "":
+            serverInfo = data["serverDescription"]
+            await interaction.response.send_message(serverInfo, ephemeral=True)
+            print(f"{userExecutor} asked info about the server, found something in json")
+        else:
+            await interaction.response.send_message(f"{userExecutor} the data for the server description is empty", ephemeral=True, delete_after=30)
+            print(f"{userExecutor} asked server info, server info is empty")
+
 
 bot.run(BotToken.token)

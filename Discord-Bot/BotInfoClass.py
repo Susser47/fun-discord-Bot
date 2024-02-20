@@ -16,6 +16,8 @@ this bot is just an open source fun bot with some useful and features like passw
 /fox: get a random image of a fox
 /cat: get a random image of a cat
 /dadjoke: sends a random dad joke
+/ping: get the bot latency
+/serverinfo: prints info about the server
 """
 
     botSource = "github repository for the source code:\nhttps://github.com/Susser47/Discord-Bot"
