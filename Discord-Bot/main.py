@@ -29,8 +29,6 @@ async def on_ready():
   _/ |\__,_|___/\__|  \__,_| |_.__/ \___/ \__|
  |__/     
           """)
-    print(BotInfo.info)
-    
     await bot.wait_until_ready()
     print(f"logged in as \"{bot.user}\"")
     await bot.tree.sync()
