@@ -44,12 +44,16 @@ if you find any issues make an issue
 # how to setup this bot  
 to set up this bot you first clone the repository doing  
 
-> git clone https://github.com/Susser47/Discord-Bot/  
+```
+git clone https://github.com/Susser47/Discord-Bot/  
+```
 
 command or by just copying the code off of github if you dont have git installed  
   
 once you have the exact files you will need to create the BotToken.py file and inside should be this text:  
-> token = "your bot token"  
+```
+token = "your bot token" 
+``` 
 
 where "your bot token" is your actual bot token, then after this you can start the bot  
 
