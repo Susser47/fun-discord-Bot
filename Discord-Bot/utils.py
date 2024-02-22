@@ -115,12 +115,13 @@ def GetRandomCatImageUrl():
 
 
 def GetRandomDadJoke():
-    with open("dad jokes.json", "r") as f:
+    with open("data/dad jokes.json", "r") as f:
         data = json.load(f)
         dadJokes = data["jokes"]
         
         return random.choice(dadJokes)
     
+
 
 # used by the bot to check if there are some errors in what the user sent
 def IsRPS(userChoice: str):

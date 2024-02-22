@@ -203,7 +203,7 @@ async def GetPing(interaction: discord.Interaction):
 async def GetInfo(interaction: discord.Interaction):
     userExecutor = interaction.user.name
 
-    with open("serverinfo.json", "r") as f:
+    with open("data/serverinfo.json", "r") as f:
         data = json.load(f)
         if data["serverDescription"] != "":
             serverInfo = data["serverDescription"]
