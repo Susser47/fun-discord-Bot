@@ -70,7 +70,7 @@ async def rps(interaction: discord.Interaction, choice: str, private: bool = Tru
     pcChoice = random.choice(pcChoices)
     result = RockPaperScissorsCalculate(choice, pcChoice)
 
-    if choice != "rock" and choice != "paper" and choice != "scissors" and choice != "r" and choice != "p" and choice != "s":
+    if IsRPS(choice):
         await interaction.response.send_message(f"the response must only be rock, paper or scissors (or r = rock, p = paper, s = scissors)", ephemeral=True, delete_after=30)
         print(f"{userExecutor} command not accepted, sending error")
     else:

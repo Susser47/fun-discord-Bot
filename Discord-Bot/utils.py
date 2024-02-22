@@ -120,3 +120,11 @@ def GetRandomDadJoke():
         dadJokes = data["jokes"]
         
         return random.choice(dadJokes)
+    
+
+# used by the bot to check if there are some errors in what the user sent
+def IsRPS(userChoice: str):
+    if userChoice != "rock" and userChoice != "paper" and userChoice != "scissors" and userChoice != "r" and userChoice != "p" and userChoice != "s":
+        return True
+    else:
+        return False
