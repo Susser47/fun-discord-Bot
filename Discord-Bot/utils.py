@@ -122,10 +122,30 @@ def GetRandomDadJoke():
         return random.choice(dadJokes)
     
 
+def GetEmoji(emojiName: str):
+    with open("data/emojis.json", "r") as f:
+        emojis = json.load(f)
+        if emojiName in emojis:
+            emoji = emojis[emojiName]
+            return emoji
+        else:
+            return "error"
+    
 
-# used by the bot to check if there are some errors in what the user sent
+
+# used by the bot, not commands
 def IsRPS(userChoice: str):
     if userChoice != "rock" and userChoice != "paper" and userChoice != "scissors" and userChoice != "r" and userChoice != "p" and userChoice != "s":
         return True
     else:
         return False
+    
+
+def ListEmojis():
+    with open("data/emojis.json", "r") as f:
+        emojis = json.load(f)
+        emojiList = ""
+        for key, value in emojis.items():
+            emojiList += f"{key}: {value}\n"
+
+    return emojiList

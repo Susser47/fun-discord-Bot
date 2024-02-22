@@ -176,6 +176,18 @@ async def WordReverse(interaction: discord.Interaction, word: str, private: bool
         print(f"{userExecutor} reversed a word publicly")
 
 
+@bot.tree.command(name="emoji", description="send an emoji in the chat")
+async def SendEmoji(interaction: discord.Interaction, emoji: str):
+    userExecutor = interaction.user.name
+    if GetEmoji(emoji) == "error":
+        await interaction.response.send_message("oops, there is no emoji with that name, you may want to do the command emojilist to get the list of all emojis and the respective names", ephemeral=True, delete_after=30)
+        print(f"{userExecutor} asked for an unexistent emoji, returning an error")
+    else:
+        await interaction.response.send_message(f"from {userExecutor}\n\n{GetEmoji(emoji)}")
+        print(f"{userExecutor} sent '{emoji}'")
+    
+
+
 
 # info commands
 @bot.tree.command(name="help", description="get some info about the commands")
@@ -212,6 +224,13 @@ async def GetInfo(interaction: discord.Interaction):
         else:
             await interaction.response.send_message(f"{userExecutor} the data for the server description is empty", ephemeral=True, delete_after=30)
             print(f"{userExecutor} asked server info, server info is empty")
+
+
+@bot.tree.command(name="emojilist", description="get a list of all emojis")
+async def ListAllEmojis(interaction: discord.Interaction):
+    userExecutor = interaction.user.name
+    await interaction.response.send_message(ListEmojis(), ephemeral=True, delete_after=60)
+    print(f"{userExecutor} got the list of all emojis")
 
 
 bot.run(BotToken.token)
