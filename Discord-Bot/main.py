@@ -179,7 +179,7 @@ async def WordReverse(interaction: discord.Interaction, word: str, private: bool
 
 # info commands
 @bot.tree.command(name="help", description="get some info about the commands")
-async def GetInfo(interaction: discord.Interaction):
+async def GetBotInfo(interaction: discord.Interaction):
     userExecutor = interaction.user.name
     await interaction.response.send_message(BotInfo.info, ephemeral=True, delete_after=30)
     print(f"info sent to {userExecutor}")
@@ -200,7 +200,7 @@ async def GetPing(interaction: discord.Interaction):
 
 
 @bot.tree.command(name="serverinfo", description="get info about this server")
-async def GetInfo(interaction: discord.Interaction):
+async def GetServerInfo(interaction: discord.Interaction):
     userExecutor = interaction.user.name
 
     with open("data/serverinfo.json", "r") as f:
