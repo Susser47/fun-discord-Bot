@@ -6,7 +6,6 @@ this bot is just an open source fun bot with some useful and features like passw
 /password: generates a password
 /flip: flips a coin
 /rps: lets you play a game of rock paper scissors with the bot
-/source: get the github repository link for the source code of this bot
 /roll: roll a dice with said faces
 /8ball: shake the magic 8 ball and get a yes/no response to one of your questions
 /numberguess: try to guess the number the bot will output
@@ -18,6 +17,8 @@ this bot is just an open source fun bot with some useful and features like passw
 /dadjoke: sends a random dad joke
 /ping: get the bot latency
 /serverinfo: prints info about the server
+
+the code of this bot is on github and you can find the link with the **/source** command
 """
 
     botSource = "github repository for the source code:\nhttps://github.com/Susser47/Discord-Bot"
