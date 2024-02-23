@@ -87,7 +87,10 @@ def GetRandomDuckImageUrl():
     result = requests.get(apiUrl)
     data = result.json()        # questo converte result (un json) in una cosa che python "puo leggere"
     
-    return data["url"]
+    if data["url"] != None:
+        return data["url"]
+    else:
+        return "error"
 
 
 def GetRandomDogImageUrl():
@@ -126,6 +129,12 @@ def GetRandomDadJoke():
 # used by the bot to check if there are some errors in what the user sent
 def IsRPS(userChoice: str):
     if userChoice != "rock" and userChoice != "paper" and userChoice != "scissors" and userChoice != "r" and userChoice != "p" and userChoice != "s":
+        return True
+    else:
+        return False
+
+def IsError(message):
+    if message == "error":
         return True
     else:
         return False

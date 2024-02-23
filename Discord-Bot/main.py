@@ -123,32 +123,48 @@ async def NumberGuess(interaction: discord.Interaction, guess: int, max: int = 1
 async def GetRandomDuckImage(interaction: discord.Interaction):
     userExecutor = interaction.user.name
 
-    await interaction.response.send_message(GetRandomDuckImageUrl())
-    print(f"{userExecutor} sent a random image of a duck")
+    if IsError(GetRandomDuckImageUrl()):
+        await interaction.response.send_message("oops, something went wrong\n\nthe problem may be with the api we are using (it may be down)\nretry again later")
+        print(f"{userExecutor} got an error with the duck command")
+    else:
+        await interaction.response.send_message(GetRandomDuckImageUrl())
+        print(f"{userExecutor} sent a random image of a duck")
 
 
 @bot.tree.command(name="dog", description="get a random image of a dog")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     userExecutor = interaction.user.name
 
-    await interaction.response.send_message(GetRandomDogImageUrl())
-    print(f"{userExecutor} sent a random image of a dog")
+    if IsError(GetRandomDogImageUrl()):
+        await interaction.response.send_message("oops, something went wrong\n\nthe problem may be with the api we are using (it may be down)\nretry again later")
+        print(f"{userExecutor} got an error with the dog command")
+    else:
+        await interaction.response.send_message(GetRandomDogImageUrl())
+        print(f"{userExecutor} sent a random image of a dog")
 
 
 @bot.tree.command(name="fox", description="get a random image of a fox")
 async def GetRandomDuckImage(interaction: discord.Interaction):
     userExecutor = interaction.user.name
 
-    await interaction.response.send_message(GetRandomFoxImageUrl())
-    print(f"{userExecutor} sent a random image of a fox")
+    if IsError(GetRandomFoxImageUrl()):
+        await interaction.response.send_message("oops, something went wrong\n\nthe problem may be with the api we are using (it may be down)\nretry again later")
+        print(f"{userExecutor} got an error with the fox command")
+    else:
+        await interaction.response.send_message(GetRandomFoxImageUrl())
+        print(f"{userExecutor} sent a random image of a fox")
 
 
 @bot.tree.command(name="cat", description="get a random image of a cat")
 async def GetCatImage(interaction: discord.Interaction):
     userExecutor = interaction.user.name
 
-    await interaction.response.send_message(GetRandomCatImageUrl())
-    print(f"{userExecutor} sent a random image of a cat")
+    if IsError(GetRandomCatImageUrl()):
+        await interaction.response.send_message("oops, something went wrong\n\nthe problem may be with the api we are using (it may be down)\nretry again later")
+        print(f"{userExecutor} got an error with the cat command")
+    else:
+        await interaction.response.send_message(GetRandomCatImageUrl())
+        print(f"{userExecutor} sent a random image of a cat")
 
 
 @bot.tree.command(name="dadjoke", description="get a random dad joke")
