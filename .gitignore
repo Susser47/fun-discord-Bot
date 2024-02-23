@@ -4,3 +4,4 @@ venv/
 BotToken.py
 Discord-Bot/venv
 .vscode/
+Discord-Bot/__pycache__
