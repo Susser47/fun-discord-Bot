@@ -10,8 +10,7 @@ from BotInfoClass import BotInfo as BotInfoClass
 import json
 
 # comment this if you don't want the screen to be cleared when the bot starts
-os.system("clear")
-os.system("CLS")
+os.system("@cls||clear")
 
 BotInfo = BotInfoClass        # creating an istance of the BotInfoClass class
 
