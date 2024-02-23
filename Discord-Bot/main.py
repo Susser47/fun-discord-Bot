@@ -17,7 +17,7 @@ BotInfo = BotInfoClass        # creating an istance of the BotInfoClass class
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.AutoShardedBot(command_prefix='/', intents=intents)
+bot = commands.AutoShardedBot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_ready():
