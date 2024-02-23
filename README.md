@@ -2,13 +2,31 @@
 
 # DISCALIMER: the owner of this repo does not take reponsability for the use you do with this code
 
-## what is this bot  
-as the name says this is mainly a fun bot meaning the bot has close to 0 staff commands (if not 0)  
-this bot isnt anything special but just an open source bot you can use if you need  
-if you find any issues make an issue
+## project info 
+this is a fun bot that you can use to spice up your discord server if it seems boring  
 
+## how to download and setup the bot
+to set up this bot you will have to first clone the repository doing the following command in a terminal (you will need git)
 
-## bot functions  
+```bash
+git clone https://github.com/Susser47/Discord-Bot/  
+```
+
+if you don't have git installed you can either install it on the official website of git (https://git-scm.com/downloads) or use the following method:  
+
+if you don't have git installed you can use the download button in github: you will have to press the green button that says "code" and then press "download zip", once that is done you will now have all the files needed to continue
+  
+once you have the exact files you will need to create the BotToken.py file and inside the Discord-Bot directory and you should add...  
+
+```python
+token = "your bot token" 
+``` 
+
+you should put your actual bot token inside the token variable
+
+then you will have to change the server description in serverinfo.json file so the sereverinfo command will work properly. if you do not do so it will display an error to the users.
+
+## bot commands  
 ### fun commands
 1. /password: generates a password and sends it in the current channel  
 
@@ -44,23 +62,5 @@ if you find any issues make an issue
 
 4. /serverinfo: get info about the server  
 
-# how to setup this bot  
-to set up this bot you first clone the repository doing  
-
-```
-git clone https://github.com/Susser47/Discord-Bot/  
-```
-
-command or by just copying the code off of github if you dont have git installed  
-  
-once you have the exact files you will need to create the BotToken.py file and inside should be this text:  
-```
-token = "your bot token" 
-``` 
-
-where "your bot token" is your actual bot token, then after this you can start the bot  
-
-then you will have to change the server description in serverinfo.json so the serevrinfo command will work properly
-
 ## note  
-if in the json file the jokes are repeted it's because they were written by chat gpt
+if in the json file the jokes are repeted or do not make sense it's because they were written by chat gpt
