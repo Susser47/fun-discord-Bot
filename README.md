@@ -1,6 +1,6 @@
 # fun discord bot
 
-# DISCALIMER: the owner of this repo does not take reponsability for the use you do with this code
+>**_DISCALIMER:_** the owner of this repo does not take reponsability for the use you do with this code
 
 ## project info 
 this is a fun bot that you can use to spice up your discord server if it seems boring  
@@ -22,8 +22,14 @@ once you have the exact files you will need to create the BotToken.py file and i
 token = "your bot token" 
 ``` 
 
-you should put your actual bot token inside the token variable
+you should put your actual bot token inside the token variable  
 
+you will then have to get all of the needed libraries (listed in the requirements file)  
+to automatically install all of them you will have to type the following command into a terminal  
+```bash
+pip install -r requirements.txt
+```
+  
 then you will have to change the server description in serverinfo.json file so the sereverinfo command will work properly. if you do not do so it will display an error to the users.
 
 ## bot commands  
